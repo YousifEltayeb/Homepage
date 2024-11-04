@@ -133,9 +133,9 @@ footer {
     color: white;
     height: 100%;
     min-width: 100vw;
+    background-color: #0990b2;
 }
 .contact-me {
-    background-color: #0990b2;
     height: 50%;
 }
 .contact-me h1 {
@@ -196,5 +196,30 @@ footer img {
     }
     .icons.header {
         display: none;
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+    }
+    .contact-me {
+        width: 50%;
+    }
+    .contact-me p {
+        padding-left: 32px;
+    }
+    .contact-me h1 {
+        text-align: start;
+        padding-left: 32px;
+        padding-top: 64px;
+    }
+    .icons.footer {
+        justify-content: start;
+        padding-left: 32px;
+    }
+    footer picture {
+        /* position: absolute; */
+        padding-left: 24px;
+        max-width: 300px;
     }
 }
