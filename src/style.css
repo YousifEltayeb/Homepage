@@ -53,8 +53,6 @@ header {
 .hero img {
     max-width: 320px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.hero img {
     margin: 8px;
 }
 .hero-header {
@@ -67,14 +65,16 @@ header {
     color: gray;
     margin: 8px;
     padding: 8px;
+    text-align: start;
 }
-.icons.header img {
+.icons.header svg {
     margin-top: 8px;
     width: 32px;
 }
 .icons.header {
     display: flex;
     justify-content: center;
+    gap: 12px;
 }
 
 .icons.main img {
@@ -90,23 +90,34 @@ header {
     padding-bottom: 16px;
 }
 .projects {
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    max-width: 1000px;
+    justify-content: center; */
+    display: grid;
+    grid-template-columns: auto;
+    justify-items: center;
+    gap: 32px;
 }
 
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-width: 100vw;
+    padding: 0 80px;
+    padding-bottom: 8px;
+    margin-bottom: 64px;
+}
+main h1 {
+    margin-bottom: 16px;
 }
 
 .project {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin: 16px;
-    height: 256px;
-    width: 264px;
+    max-height: 460px;
+    max-width: 400px;
+    min-width: 300px;
+    min-height: 350px;
 }
 
 .screenshot {
@@ -127,6 +138,9 @@ main {
 
 .project-description {
     color: gray;
+    padding: 8px;
+}
+.project-info {
     padding: 8px;
 }
 footer {
@@ -156,6 +170,22 @@ footer img {
 }
 
 @media (min-width: 600px) {
+    header {
+        height: 100vh;
+    }
+    body {
+        align-items: center;
+    }
+
+    main {
+        min-width: 100vw;
+        padding: 0 80px;
+        margin-bottom: 64px;
+    }
+    .projects {
+        grid-template-columns: auto auto;
+        min-width: 100%;
+    }
     .background {
         height: 100%;
     }
@@ -172,10 +202,9 @@ footer img {
         grid-column: 1 / span 5;
         position: relative;
         max-width: 100%;
-        box-sizing: border-box;
-        border: 1px solid black;
         background-color: white;
         padding: 48px 24px;
+        box-shadow: 0px 0px 10px 1px rgba(112, 112, 112, 1);
     }
     .hero picture img {
         display: block;
@@ -186,7 +215,6 @@ footer img {
     }
 
     .name {
-        position: absolute;
         float: right;
         min-width: 80%;
         left: 200px;
@@ -197,13 +225,19 @@ footer img {
     .icons.header {
         display: none;
     }
+    main h1 {
+        align-self: flex-start;
+        padding-bottom: 8px;
+    }
 
     footer {
+        /* height: 100vh; */
+
         display: flex;
         justify-content: center;
     }
     .contact-me {
-        width: 50%;
+        /* width: 50%; */
     }
     .contact-me p {
         padding-left: 32px;
@@ -214,12 +248,90 @@ footer img {
         padding-top: 64px;
     }
     .icons.footer {
+        margin-top: 16px;
         justify-content: start;
         padding-left: 32px;
     }
     footer picture {
-        /* position: absolute; */
         padding-left: 24px;
         max-width: 300px;
+    }
+}
+@media (min-width: 1000px) {
+    header {
+        height: 100vh;
+    }
+    body {
+        align-items: center;
+    }
+    main {
+        min-width: 100vw;
+        padding: 0 80px;
+        margin: 56px 0;
+    }
+    .projects {
+        /* grid-template-columns: 1fr 1fr 1fr; */
+        grid-template-columns: repeat(3, auto);
+        justify-content: space-between;
+        width: 100%;
+    }
+    .hero {
+        align-items: start;
+        padding: 80px 80px;
+    }
+    .hero-header {
+        /* min-height: 100%; */
+        padding: 0;
+    }
+
+    .hero picture img {
+        max-width: 450px;
+
+        margin-top: -2em;
+        margin-left: -2em;
+        margin-bottom: -2em;
+    }
+    .about-me-text {
+        font-size: 24px;
+    }
+    footer {
+        height: 100vh;
+    }
+    footer picture {
+        /* margin: auto 24px; */
+        max-width: 100%;
+        padding: 0;
+    }
+    .icons.header {
+        position: absolute;
+        display: flex;
+        justify-content: end;
+        right: 20px;
+        bottom: 16px;
+    }
+    .hero-header h1 {
+        text-align: left;
+        font-size: 3rem;
+    }
+    .name {
+        left: 0px;
+        top: 335px;
+        font-size: 64px;
+    }
+    main h1 {
+        align-self: flex-start;
+        font-size: 56px;
+    }
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 80px 40px;
+        /* align-items: center; */
+    }
+    .contact-me {
+        font-size: 24px;
+    }
+    .contact-me h1 {
+        padding-top: 0;
     }
 }
